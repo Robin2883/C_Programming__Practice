@@ -4,8 +4,22 @@
 int stack_arr[4];
 int top=-1;
 
+int isFull(){
+    if (top==3)
+        return 1;
+    else
+        return 0;   
+}
+
+int isEmpty(){
+    if (top==-1)
+        return 1;
+    else
+        return 0;   
+}
+
 void push (int data){
-    if (top==3){
+    if (isFull()){
         printf("stack overflow");
         return;
     }
@@ -16,7 +30,7 @@ void push (int data){
 
 int pop(){
     int value;
-    if (top==-1){
+    if (isEmpty()){
         printf("stack underflow");
         exit(1); //abnormal termination of the program
     }
